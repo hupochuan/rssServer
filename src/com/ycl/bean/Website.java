@@ -2,7 +2,7 @@ package com.ycl.bean;
 
 public class Website {
 	
-	private String title;
+	private String name;
 	private String url;
 	private String startTag;
 	private String endTag;
@@ -10,14 +10,14 @@ public class Website {
 	private String rssid;
 	private int interval;
 	private String theme;
-	private Boolean isenabled;
+	private String open;
 	private Boolean theme_chooseable;
 	
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getUrl() {
 		return url;
@@ -61,11 +61,11 @@ public class Website {
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}
-	public Boolean getIsenabled() {
-		return isenabled;
+	public String getOpen() {
+		return open;
 	}
-	public void setIsenabled(Boolean isenabled) {
-		this.isenabled = isenabled;
+	public void setOpen(String open) {
+		this.open = open;
 	}
 	public Boolean getTheme_chooseable() {
 		return theme_chooseable;
@@ -73,4 +73,5 @@ public class Website {
 	public void setTheme_chooseable(Boolean theme_chooseable) {
 		this.theme_chooseable = theme_chooseable;
 	}
+	
 }

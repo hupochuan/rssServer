@@ -7,7 +7,7 @@
         <endTag><![CDATA[<div class="share">]]></endTag>
         <encoding>GB2312</encoding>
         <rssid>1</rssid>
-        <isenabled>true</isenabled>
+        <open>true</open>
     </site>
 
     <site>
@@ -17,7 +17,7 @@
     <endTag><![CDATA[</table>]]></endTag>
     <encoding>UTF-8</encoding>
     <rssid>2</rssid>
-    <isenabled>true</isenabled>
+    <open>true</open>
     </site>
     
     <site>
@@ -27,7 +27,7 @@
         <endTag><![CDATA[<div id="krapi" class="sep20">]]></endTag>
         <encoding>UTF-8</encoding>
         <rssid>3</rssid>
-        <isenabled>true</isenabled>
+        <open>true</open>
     </site>
     
     <site>
@@ -37,7 +37,7 @@
         <endTag><![CDATA[<div id="ifr-article-component" class="m-t-10 clearfix">]]></endTag>
         <encoding>UTF-8</encoding>
         <rssid>4</rssid>
-        <isenabled>true</isenabled>
+        <open>true</open>
     </site>
     
     <site>
@@ -47,7 +47,7 @@
         <endTag><![CDATA[<div class="share" >]]></endTag>
         <encoding>UTF-8</encoding>
         <rssid>5</rssid>
-        <isenabled>true</isenabled>
+        <open>true</open>
     </site>
     
     <site>
@@ -57,7 +57,7 @@
         <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
         <encoding>UTF-8</encoding>
         <rssid>6</rssid>
-        <isenabled>true</isenabled>
+        <open>true</open>
     </site>
     
     <site>
@@ -67,7 +67,7 @@
         <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
         <encoding>UTF-8</encoding>
         <rssid>7</rssid>
-        <isenabled>true</isenabled>
+        <open>true</open>
     </site>
     <site>
         <name>CSDN-研发管理</name>
@@ -76,6 +76,6 @@
         <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
         <encoding>UTF-8</encoding>
         <rssid>8</rssid>
-        <isenabled>true</isenabled>
+        <open>true</open>
     </site>
 </websites>
