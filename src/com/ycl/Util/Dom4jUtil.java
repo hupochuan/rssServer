@@ -37,10 +37,12 @@ public class Dom4jUtil {
                     String name = node.getName();
                     // System.out.println(name + ":" + node.getText());
                     String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
-                    System.out.println(methodName);
+                    //System.out.println(methodName);
                     Method method = website.getClass().getMethod(methodName, String.class);
+                   
                     method.invoke(website, node.getText());
                 }
+                System.out.println(website.getName());
                 list.add(website);
             }
         } catch (DocumentException e) {

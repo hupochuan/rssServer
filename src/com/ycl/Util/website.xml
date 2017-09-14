@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <websites>
-    <site>
-        <name>IT之家</name>
-        <url>http://www.ithome.com/rss/</url>
-        <startTag><![CDATA[<div class="post_content" id="paragraph">]]></startTag>
-        <endTag><![CDATA[<div class="share">]]></endTag>
-        <encoding>GB2312</encoding>
-        <rssid>1</rssid>
-        <open>true</open>
-    </site>
-
-    <site>
-    <name>虎嗅网</name>
-    <url>http://www.huxiu.com/rss/0.xml</url>
-    <startTag><![CDATA[<table cellpadding="0" cellspacing="0" class="neirong-box" >]]></startTag>
-    <endTag><![CDATA[</table>]]></endTag>
-    <encoding>UTF-8</encoding>
-    <rssid>2</rssid>
-    <open>true</open>
-    </site>
     
     <site>
         <name>36氪</name>
@@ -76,6 +57,16 @@
         <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
         <encoding>UTF-8</encoding>
         <rssid>8</rssid>
+        <open>true</open>
+    </site>
+   
+     <site>
+        <name>新华网-时政频道</name>
+        <url> http://www.xinhuanet.com/politics/news_politics.xml</url>
+        <startTag><![CDATA[<div id="p-detail">]]></startTag>
+        <endTag><![CDATA[<div class="l-ad-1">]]></endTag>
+        <encoding>UTF-8</encoding>
+        <rssid>9</rssid>
         <open>true</open>
     </site>
 </websites>

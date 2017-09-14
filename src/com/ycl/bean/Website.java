@@ -73,5 +73,8 @@ public class Website {
 	public void setTheme_chooseable(Boolean theme_chooseable) {
 		this.theme_chooseable = theme_chooseable;
 	}
+	public String toString(){
+		return "";
+	}
 	
 }
