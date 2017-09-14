@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<websites>
+    <site>
+        <name>IT之家</name>
+        <url>http://www.ithome.com/rss/</url>
+        <startTag><![CDATA[<div class="post_content" id="paragraph">]]></startTag>
+        <endTag><![CDATA[<div class="share">]]></endTag>
+        <encoding>GB2312</encoding>
+        <rssid>1</rssid>
+        <isenabled>true</isenabled>
+    </site>
+
+    <site>
+    <name>虎嗅网</name>
+    <url>http://www.huxiu.com/rss/0.xml</url>
+    <startTag><![CDATA[<table cellpadding="0" cellspacing="0" class="neirong-box" >]]></startTag>
+    <endTag><![CDATA[</table>]]></endTag>
+    <encoding>UTF-8</encoding>
+    <rssid>2</rssid>
+    <isenabled>true</isenabled>
+    </site>
+    
+    <site>
+        <name>36氪</name>
+        <url>http://www.36kr.com/feed</url>
+        <startTag><![CDATA[<div class="mainContent sep-10">]]></startTag>
+        <endTag><![CDATA[<div id="krapi" class="sep20">]]></endTag>
+        <encoding>UTF-8</encoding>
+        <rssid>3</rssid>
+        <isenabled>true</isenabled>
+    </site>
+    
+    <site>
+        <name>爱范儿</name>
+        <url>http://www.ifanr.com/feed</url>
+        <startTag><![CDATA[<div id="entry-content" class="entry-content">]]></startTag>
+        <endTag><![CDATA[<div id="ifr-article-component" class="m-t-10 clearfix">]]></endTag>
+        <encoding>UTF-8</encoding>
+        <rssid>4</rssid>
+        <isenabled>true</isenabled>
+    </site>
+    
+    <site>
+        <name>CSDN</name>
+        <url>http://www.csdn.net/article/rss_lastnews</url>
+        <startTag><![CDATA[<div class="con news_content">]]></startTag>
+        <endTag><![CDATA[<div class="share" >]]></endTag>
+        <encoding>UTF-8</encoding>
+        <rssid>5</rssid>
+        <isenabled>true</isenabled>
+    </site>
+    
+    <site>
+        <name>CSDN-移动博客</name>
+        <url>http://blog.csdn.net/rss.html?type=Home&amp;channel=mobile</url>
+        <startTag><![CDATA[<div id="article_content" class="article_content">]]></startTag>
+        <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
+        <encoding>UTF-8</encoding>
+        <rssid>6</rssid>
+        <isenabled>true</isenabled>
+    </site>
+    
+    <site>
+        <name>CSDN-编程语言</name>
+        <url>http://blog.csdn.net/rss.html?type=Home&amp;channel=code</url>
+        <startTag><![CDATA[<div id="article_content" class="article_content">]]></startTag>
+        <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
+        <encoding>UTF-8</encoding>
+        <rssid>7</rssid>
+        <isenabled>true</isenabled>
+    </site>
+    <site>
+        <name>CSDN-研发管理</name>
+        <url>http://blog.csdn.net/rss.html?type=Home&amp;channel=software</url>
+        <startTag><![CDATA[<div id="article_content" class="article_content">]]></startTag>
+        <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
+        <encoding>UTF-8</encoding>
+        <rssid>8</rssid>
+        <isenabled>true</isenabled>
+    </site>
+</websites>
