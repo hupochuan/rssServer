@@ -16,91 +16,24 @@ public class DbUtil {
     private static String dbURL = "jdbc:mysql://rdsbuefubbuefub.mysql.rds.aliyuncs.com:3306/jinggangshan?useUnicode=true&characterEncoding=UTF-8";
     private static String userName = "insurance";
     private static String userPass = "123456";
-    public static ThreadLocal<Connection> threadConnection = new ThreadLocal<Connection>();
+    //public static ThreadLocal<Connection> threadConnection = new ThreadLocal<Connection>();
 
-    public DbUtil() {
-
+    public static Connection getConnection() {
+        Connection con = null;    //创建用于连接数据库的Connection对象
         try {
-            Class.forName(driverName).newInstance();
-        } catch (InstantiationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            Class.forName(driverName);// 加载Mysql数据驱动
+            con = DriverManager.getConnection(dbURL, userName, userPass);// 创建数据连接
+        } catch (Exception e) {
+            System.out.println("数据库连接失败" + e.getMessage());
         }
-    }
-
-    public static Connection getSqlConnection() {
-         try {
-            Class.forName(driverName).newInstance();
-        } catch (InstantiationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(dbURL, userName, userPass);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return conn;
+        return con;    //返回所建立的数据库连接
     }
 
     /**
+     * 开始事务
      *
-     * @return
+     * @param cnn
      */
-    public static Connection getCurrentConnection() {
-        Connection con = (Connection) threadConnection.get();
-        if (con == null) {
-            con = getSqlConnection();
-            threadConnection.set(con);
-        }
-        return con;
-    }
-
-    public static void closeCurrentConnection() {
-        Connection con = (Connection) threadConnection.get();
-        threadConnection.remove();
-        try {
-            if (con != null) {
-                con.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void closePreStatement(PreparedStatement ps) {
-        try {
-            if (ps != null) {
-                ps.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void closeResultSet(ResultSet rs) {
-        try {
-            if (rs != null) {
-                rs.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void beginTransaction(Connection cnn) {
         if (cnn != null) {
             try {
@@ -146,6 +79,7 @@ public class DbUtil {
             }
         }
     }
+
 
 }
 

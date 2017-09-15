@@ -12,6 +12,7 @@ public class RSSItemBean {
     private String type;
     private String content;
     private int rssid;
+    private String rssname;
     
 	public String getTitle() {
 		return title;
@@ -71,6 +72,12 @@ public class RSSItemBean {
 		return "title:"+this.title+" author:"+this.author+" uri:"+this.uri+" link:"+this.link+" discription:"
 	+this.discription+" pubDate:"+this.pubDate+" type:"+this.type+" content:"+this.content;
 	   
+	}
+	public String getRssname() {
+		return rssname;
+	}
+	public void setRssname(String rssname) {
+		this.rssname = rssname;
 	}
 
 }

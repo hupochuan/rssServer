@@ -13,7 +13,7 @@ import com.ycl.bean.RSSItemBean;
 public class RssDao {
 	public void insert(RSSItemBean rsItem) {
 	    Connection con = null;
-	    con = DbUtil.getSqlConnection();
+	    con = DbUtil.getConnection();
 	    if (!checkExist(rsItem.getTitle())) {                //检查内容是否已经被抓取了
           
             PreparedStatement st;
@@ -23,7 +23,12 @@ public class RssDao {
                 String sql = "INSERT INTO rss_article(title,author,uri,pubDate,type,content,rssid,created_time) values(?,?,?,?,?,?,?,?)";
                 st = (PreparedStatement) con.prepareStatement(sql);    // 创建用于执行静态sql语句的Statement对象
                 st.setString(1, rsItem.getTitle());
-                st.setString(2, rsItem.getAuthor());
+                if(rsItem.getAuthor()!=null){
+                	 st.setString(2, rsItem.getAuthor());
+                }else{
+                	st.setString(2, rsItem.getRssname());
+                }
+               
                 st.setString(3, rsItem.getUri());
                 if(rsItem.getPubDate()!=null){
                 	st.setTimestamp(4,new java.sql.Timestamp(rsItem.getPubDate().getTime()));
@@ -59,7 +64,7 @@ public class RssDao {
 	}
 	public Boolean checkExist(String title) {
         String sql = "select * from rss_article p where p.title = ?";
-        Connection conn = DbUtil.getSqlConnection();
+        Connection conn = DbUtil.getConnection();
         try {
             PreparedStatement prest = conn.prepareStatement(sql);
             prest.setString(1, title);

@@ -45,7 +45,7 @@ public class RssReader {
             item.setPubDate(entry.getPublishedDate());
             item.setAuthor(entry.getAuthor());
             rssItemBeans.add(item);
-            //System.out.println(item.toString());
+            System.out.println("原网页："+entry.getPublishedDate()+"获取之后："+item.getPubDate());
         }
        
         return rssItemBeans;
@@ -64,6 +64,7 @@ public class RssReader {
             rsItem.setContent(content);
             //break;
             rsItem.setRssid(Integer.parseInt(website.getRssid()));
+            rsItem.setRssname(website.getName());
           
         }
         return rssList;
