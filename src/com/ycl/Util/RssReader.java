@@ -64,7 +64,7 @@ public class RssReader {
             rsItem.setContent(content);
             //break;
             rsItem.setRssid(Integer.parseInt(website.getRssid()));
-            System.out.println(rsItem.toString());
+          
         }
         return rssList;
     }

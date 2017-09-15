@@ -2,6 +2,7 @@
 
 import java.util.List;
 
+import com.ycl.DbUtil.RssDao;
 import com.ycl.Util.Dom4jUtil;
 import com.ycl.Util.RssReader;
 import com.ycl.bean.RSSItemBean;
@@ -42,10 +43,21 @@ public class Main {
        
     }
     public void rssInsert(Website we){
-    	List<RSSItemBean> rsslist=null;
+    	List<RSSItemBean> rssList=null;
     	
         try {
-			rsslist = new RssReader().getContent(we);
+			rssList = new RssReader().getContent(we);
+			 RssDao rssDao = new RssDao();
+	            if (rssList != null) {
+	                int size = rssList.size();
+	                for (int i = 0; i < size; i++) {
+	                    RSSItemBean rs = rssList.get(i);
+	                    if(rs.getContent().equals("")){
+	                        continue;
+	                    }
+	                    rssDao.insert(rs);
+	                }
+	            }
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
