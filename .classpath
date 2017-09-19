@@ -2,13 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/gson-2.2.4.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/jdom-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/log4j-api-2.0-beta9.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/mysql-connector-java-5.1.26.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/rome-1.0.jar" sourcepath="lib/rome-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/rssServer/lib/xml-apis-1.0.b2.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-api-2.0-beta9.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.26.jar"/>
+	<classpathentry kind="lib" path="lib/xml-apis-1.0.b2.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-nop-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/jdom2-2.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/rome-1.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/rome-utils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.16.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

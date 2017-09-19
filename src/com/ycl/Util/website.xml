@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<websites>
-    
-    <site>
-        <name>36氪</name>
-        <url>http://www.36kr.com/feed</url>
-        <startTag><![CDATA[<div class="mainContent sep-10">]]></startTag>
-        <endTag><![CDATA[<div id="krapi" class="sep20">]]></endTag>
-        <encoding>UTF-8</encoding>
-        <rssid>3</rssid>
-        <open>true</open>
-    </site>
-    
-    <site>
+<websites> 
+     <site>
         <name>爱范儿</name>
         <url>http://www.ifanr.com/feed</url>
-        <startTag><![CDATA[<div id="entry-content" class="entry-content">]]></startTag>
-        <endTag><![CDATA[<div id="ifr-article-component" class="m-t-10 clearfix">]]></endTag>
+        <startTag><![CDATA[<article class="o-single-content__body__content c-article-content s-single-article js-article">]]></startTag>
+        <endTag><![CDATA[<div class="o-single-content__body__content">]]></endTag>
+        <unified>true</unified>
         <encoding>UTF-8</encoding>
-        <rssid>4</rssid>
-        <open>true</open>
+        <rssid>1</rssid>
+        <open>false</open>
     </site>
     
     <site>
@@ -26,47 +16,65 @@
         <url>http://www.csdn.net/article/rss_lastnews</url>
         <startTag><![CDATA[<div class="con news_content">]]></startTag>
         <endTag><![CDATA[<div class="share" >]]></endTag>
+        <unified>true</unified>
         <encoding>UTF-8</encoding>
-        <rssid>5</rssid>
+        <rssid>2</rssid>
+        <open>false</open>
+    </site>
+    
+    <site>
+        <name>腾讯新闻-国内新闻</name>
+        <url>http://news.qq.com/newsgn/rss_newsgn.xml</url>
+        <startTag><![CDATA[<div id="Cnt-Main-Article-QQ" class="Cnt-Main-Article-QQ" bossZone="content">]]></startTag>
+        <endTag><![CDATA[<span style="width:0;height:0;overflow:hidden;display:block;font:0/0 Arial">]]></endTag>
+         <unified>true</unified>
+        <encoding>GB2312</encoding>
+        <rssid>3</rssid>
         <open>true</open>
     </site>
     
     <site>
-        <name>CSDN-移动博客</name>
-        <url>http://blog.csdn.net/rss.html?type=Home&amp;channel=mobile</url>
-        <startTag><![CDATA[<div id="article_content" class="article_content">]]></startTag>
-        <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
+        <name>科学网-首页头条</name>
+        <url>http://www.sciencenet.cn/xml/news-0.aspx?di=0</url>
+        <startTag><![CDATA[<div id="content1" ]]></startTag>
+        <endTag><![CDATA[<div style="TEXT-INDENT: 2em">]]></endTag>
+         <unified>true</unified>
         <encoding>UTF-8</encoding>
-        <rssid>6</rssid>
-        <open>true</open>
-    </site>
-    
-    <site>
-        <name>CSDN-编程语言</name>
-        <url>http://blog.csdn.net/rss.html?type=Home&amp;channel=code</url>
-        <startTag><![CDATA[<div id="article_content" class="article_content">]]></startTag>
-        <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
-        <encoding>UTF-8</encoding>
-        <rssid>7</rssid>
-        <open>true</open>
+        <rssid>4</rssid>
+        <open>false</open>
     </site>
     <site>
         <name>CSDN-研发管理</name>
         <url>http://blog.csdn.net/rss.html?type=Home&amp;channel=software</url>
         <startTag><![CDATA[<div id="article_content" class="article_content">]]></startTag>
         <endTag><![CDATA[<!-- Baidu Button BEGIN -->]]></endTag>
+         <unified>true</unified>
         <encoding>UTF-8</encoding>
-        <rssid>8</rssid>
-        <open>true</open>
+        <rssid>5</rssid>
+        <open>false</open>
     </site>
    
      <site>
         <name>新华网-时政频道</name>
-        <url> http://www.xinhuanet.com/politics/news_politics.xml</url>
+        <url>http://www.xinhuanet.com/politics/news_politics.xml</url>
         <startTag><![CDATA[<div id="p-detail">]]></startTag>
         <endTag><![CDATA[<div class="l-ad-1">]]></endTag>
+         <unified>true</unified>
         <encoding>UTF-8</encoding>
-        <rssid>9</rssid>
-        <open>true</open>
+        <rssid>6</rssid>
+        <open>false</open>
     </site>
+    
+      <site>
+        <name>百度新闻</name>
+        <url><![CDATA[http://news.baidu.com/ns?word=井冈山&tn=newsrss&sr=0&cl=2&rn=20&ct=0]]></url>
+        <startTag><![CDATA[<div id="p-detail">]]></startTag>
+        <endTag><![CDATA[<div class="l-ad-1">]]></endTag>
+        <unified>false</unified>
+        <encoding>GB2312</encoding>
+        <rssid>7</rssid>
+        <open>false</open>
+    </site>
+    
+    
 </websites>

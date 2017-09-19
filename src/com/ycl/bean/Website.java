@@ -11,6 +11,7 @@ public class Website {
 	private int interval;
 	private String theme;
 	private String open;
+	private String unified;
 	private Boolean theme_chooseable;
 	
 	public String getName() {
@@ -75,6 +76,12 @@ public class Website {
 	}
 	public String toString(){
 		return "";
+	}
+	public String getUnified() {
+		return unified;
+	}
+	public void setUnified(String unified) {
+		this.unified = unified;
 	}
 	
 }

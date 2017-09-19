@@ -1,43 +1,63 @@
 package com.ycl.Util;
 
 
-import com.sun.syndication.feed.synd.SyndEntryImpl;
-import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.io.SyndFeedInput;
-import com.sun.syndication.io.XmlReader;
+import com.rometools.rome.feed.synd.SyndEntry;
+import com.rometools.rome.feed.synd.SyndEntryImpl;
+import com.rometools.rome.feed.synd.SyndFeed;
+import com.rometools.rome.io.SyndFeedInput;
+import com.rometools.rome.io.XmlReader;
+import com.sun.corba.se.impl.orbutil.closure.Constant;
 import com.ycl.bean.RSSItemBean;
 import com.ycl.bean.Website;
 
 import javax.imageio.ImageIO;
 
+import org.xml.sax.InputSource;
+
+
+
+
+
+
+
+
+
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.Charset;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RssReader {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) throws IOException, IllegalArgumentException {
+
 
 	}
 	public List<RSSItemBean> getRss(String url) throws Exception {
 		System.out.println(url);
-        URL feedUrl = new URL(url);//SyndFeedInput:ä»è¿œç¨‹è¯»åˆ°xmlç»“æ„çš„å†…å®¹è½¬æˆSyndFeedImplå®ä¾‹
+        URL feedUrl = new URL(url);//SyndFeedInput:´ÓÔ¶³Ì¶Áµ½xml½á¹¹µÄÄÚÈİ×ª³ÉSyndFeedImplÊµÀı
         URLConnection conn = feedUrl.openConnection();
-        conn.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)"); //æ¬ºéª—æœåŠ¡å™¨
-        SyndFeedInput input = new SyndFeedInput();//romeæŒ‰SyndFeedç±»å‹ç”Ÿæˆrsså’Œatomçš„å®ä¾‹,
+        conn.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)"); //ÆÛÆ­·şÎñÆ÷
+        SyndFeedInput input = new SyndFeedInput();//rome°´SyndFeedÀàĞÍÉú³ÉrssºÍatomµÄÊµÀı,
 
-        SyndFeed feed = input.build(new XmlReader(conn));   //SyndFeedæ˜¯rsså’Œatomå®ç°ç±»SyndFeedImplçš„æ¥å£
-        List<SyndEntryImpl> entries = feed.getEntries();
+        SyndFeed feed = input.build(new XmlReader(conn));   //SyndFeedÊÇrssºÍatomÊµÏÖÀàSyndFeedImplµÄ½Ó¿Ú
+        //System.out.println(feed);
+        List<SyndEntry> entries = feed.getEntries();
         RSSItemBean item = null;
         List<RSSItemBean> rssItemBeans = new ArrayList<RSSItemBean>();
-        for (SyndEntryImpl entry : entries) {
+        for (SyndEntry entry : entries) {
             item = new RSSItemBean();
             item.setTitle(entry.getTitle().trim());
             item.setType(feed.getTitleEx().getValue().trim());
@@ -45,7 +65,7 @@ public class RssReader {
             item.setPubDate(entry.getPublishedDate());
             item.setAuthor(entry.getAuthor());
             rssItemBeans.add(item);
-            System.out.println("åŸç½‘é¡µï¼š"+entry.getPublishedDate()+"è·å–ä¹‹åï¼š"+item.getPubDate());
+    
         }
        
         return rssItemBeans;
@@ -53,19 +73,44 @@ public class RssReader {
 	
 	public List<RSSItemBean> getContent(Website website) throws Exception {
         String content;
-        System.out.println(website.getUrl());
+       
         List<RSSItemBean> rssList = getRss(website.getUrl());
-        FindHtmlContent findHtml = new FindHtmlContent(website.getStartTag(), website.getEndTag(), website.getEncoding());
+       
+       
         for (RSSItemBean rsItem : rssList) {
-            String link = rsItem.getUri();
+       
+        	if(website.getUnified().equals("false")){
+        		
+        		 if(Constants.websitecontent.get(rsItem.getAuthor()) != null){
+        			 	
+        			 String[] tags=Constants.websitecontent.get(rsItem.getAuthor()).split(",");
+      
+        			 FindHtmlContent findHtml = new FindHtmlContent(tags[0], tags[1], tags[2]);
+            		 String link = rsItem.getUri();
+                     content = findHtml.getContent(link);   //¹Ø¼ü·½·¨£¬»ñÈ¡ĞÂÎÅÕ÷ÎÄ
+                     //content = processImages(content);          //×ª»»Í¼Æ¬
+                     rsItem.setContent(content);
+ 
+                     rsItem.setRssid(Integer.parseInt(website.getRssid()));
+                     rsItem.setRssname(website.getName());
+        			 
+                     System.out.println(rsItem.toString());
+        		 }
+        		 
+        	}else{
+        		 FindHtmlContent findHtml = new FindHtmlContent(website.getStartTag(),website.getEndTag(), website.getEncoding());
+        		 String link = rsItem.getUri();
+                 content = findHtml.getContent(link);   //¹Ø¼ü·½·¨£¬»ñÈ¡ĞÂÎÅÕ÷ÎÄ
+                 //content = processImages(content);          //×ª»»Í¼Æ¬
+                 rsItem.setContent(content);
 
-            content = findHtml.getContent(link);   //å…³é”®æ–¹æ³•ï¼Œè·å–æ–°é—»å¾æ–‡
-            //content = processImages(content);          //è½¬æ¢å›¾ç‰‡
-            rsItem.setContent(content);
-            //break;
-            rsItem.setRssid(Integer.parseInt(website.getRssid()));
-            rsItem.setRssname(website.getName());
-          
+                 rsItem.setRssid(Integer.parseInt(website.getRssid()));
+                 rsItem.setRssname(website.getName());
+                 
+                 System.out.println(rsItem.toString());
+    			 
+        		
+        	}
         }
         return rssList;
     }
