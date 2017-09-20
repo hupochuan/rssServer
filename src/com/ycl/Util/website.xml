@@ -30,7 +30,7 @@
          <unified>true</unified>
         <encoding>GB2312</encoding>
         <rssid>3</rssid>
-        <open>true</open>
+        <open>false</open>
     </site>
     
     <site>
@@ -72,8 +72,18 @@
         <endTag><![CDATA[<div class="l-ad-1">]]></endTag>
         <unified>false</unified>
         <encoding>GB2312</encoding>
-        <rssid>7</rssid>
-        <open>false</open>
+        <rssid>1</rssid>
+        <open>true</open>
+    </site>
+     <site>
+        <name>百度新闻</name>
+        <url><![CDATA[http://news.baidu.com/ns?word=井冈山革命红军&tn=newsrss&sr=0&cl=2&rn=20&ct=0]]></url>
+        <startTag><![CDATA[<div id="p-detail">]]></startTag>
+        <endTag><![CDATA[<div class="l-ad-1">]]></endTag>
+        <unified>false</unified>
+        <encoding>GB2312</encoding>
+        <rssid>1</rssid>
+        <open>true</open>
     </site>
     
     

@@ -52,7 +52,7 @@ public class Main {
 	                int size = rssList.size();
 	                for (int i = 0; i < size; i++) {
 	                    RSSItemBean rs = rssList.get(i);
-	                    if(rs.getContent().equals("")){
+	                    if(rs.getContent()==null||rs.getContent().equals("")){
 	                        continue;
 	                    }
 	                    rssDao.insert(rs);
